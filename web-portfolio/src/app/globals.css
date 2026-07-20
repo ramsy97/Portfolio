@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --color-background: #ffffff;
+  --color-foreground: #0f172a;
+  --color-primary: #2563eb;
+  --color-primary-light: #38bdf8;
+  --color-secondary: #0f172a;
+  --color-muted: #f1f5f9;
+  --color-muted-foreground: #475569;
+  --color-card: #ffffff;
+  --color-card-foreground: #0f172a;
+  --color-border: #94a3b8;
+  --color-ring: #2563eb;
+  --radius: 0.75rem;
+  --color-green-500: #22c55e;
+  --color-green-600: #16a34a;
+  --color-orange-500: #f97316;
+  --color-orange-600: #ea580c;
+  --color-purple-500: #a855f7;
+  --color-purple-600: #9333ea;
+  --color-yellow-400: #facc15;
+}
+
+.dark {
+  --color-background: #0b1120;
+  --color-foreground: #e2e8f0;
+  --color-primary: #3b82f6;
+  --color-primary-light: #38bdf8;
+  --color-secondary: #1e293b;
+  --color-muted: #111827;
+  --color-muted-foreground: #94a3b8;
+  --color-card: #151d2e;
+  --color-card-foreground: #e2e8f0;
+  --color-border: #1e293b;
+  --color-ring: #3b82f6;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+@utility glass {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(148, 163, 184, 0.6);
+}
+
+.dark .glass {
+  background: rgba(11, 17, 32, 0.72);
+  border: 1px solid rgba(30, 41, 59, 0.6);
+}
+
+@utility gradient-text {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility gradient-bg {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+}
+
+@utility section-alt {
+  background: var(--color-muted);
+  border-top: 1px solid var(--color-border);
+}

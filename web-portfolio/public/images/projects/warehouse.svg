@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg2)" rx="12"/>
+  <rect x="20" y="20" width="760" height="40" fill="#1e293b" rx="8"/>
+  <circle cx="40" cy="40" r="6" fill="#ef4444"/>
+  <circle cx="56" cy="40" r="6" fill="#eab308"/>
+  <circle cx="72" cy="40" r="6" fill="#22c55e"/>
+  <text x="400" y="44" textAnchor="middle" fill="#94a3b8" font-size="13" font-family="system-ui">Warehouse Management System</text>
+  <rect x="20" y="70" width="160" height="410" fill="#1e293b" rx="8"/>
+  <rect x="32" y="86" width="136" height="8" fill="#334155" rx="4"/>
+  <rect x="32" y="106" width="100" height="8" fill="#334155" rx="4"/>
+  <rect x="32" y="136" width="136" height="30" fill="#3b82f6" rx="6" opacity="0.9"/>
+  <text x="100" y="155" textAnchor="middle" fill="white" font-size="11" font-family="system-ui">Overview</text>
+  <text x="48" y="190" fill="#94a3b8" font-size="11" font-family="system-ui">Zones</text>
+  <text x="48" y="220" fill="#94a3b8" font-size="11" font-family="system-ui">Shipments</text>
+  <text x="48" y="250" fill="#94a3b8" font-size="11" font-family="system-ui">Analytics</text>
+  <rect x="200" y="70" width="580" height="100" fill="#1e293b" rx="8"/>
+  <rect x="220" y="86" width="170" height="70" fill="#0f172a" rx="6"/>
+  <text x="230" y="106" fill="#94a3b8" font-size="10" font-family="system-ui">Total Items</text>
+  <text x="230" y="135" fill="#3b82f6" font-size="24" font-weight="bold" font-family="system-ui">12,847</text>
+  <rect x="400" y="86" width="170" height="70" fill="#0f172a" rx="6"/>
+  <text x="410" y="106" fill="#94a3b8" font-size="10" font-family="system-ui">Zones Active</text>
+  <text x="410" y="135" fill="#22c55e" font-size="24" font-weight="bold" font-family="system-ui">8</text>
+  <rect x="580" y="86" width="170" height="70" fill="#0f172a" rx="6"/>
+  <text x="590" y="106" fill="#94a3b8" font-size="10" font-family="system-ui">Pending Shipments</text>
+  <text x="590" y="135" fill="#eab308" font-size="24" font-weight="bold" font-family="system-ui">24</text>
+  <rect x="200" y="180" width="280" height="300" fill="#1e293b" rx="8"/>
+  <text x="220" y="210" fill="#e2e8f0" font-size="14" font-weight="bold" font-family="system-ui">Warehouse Zones</text>
+  <rect x="220" y="225" width="240" height="50" fill="#0f172a" rx="6"/>
+  <rect x="230" y="235" width="40" height="30" fill="#3b82f6" rx="4" opacity="0.3"/>
+  <text x="280" y="248" fill="#e2e8f0" font-size="11" font-family="system-ui">Zone A - Electronics</text>
+  <text x="280" y="262" fill="#22c55e" font-size="10" font-family="system-ui">2,340 items</text>
+  <rect x="220" y="280" width="240" height="50" fill="#0f172a" rx="6"/>
+  <rect x="230" y="290" width="40" height="30" fill="#8b5cf6" rx="4" opacity="0.3"/>
+  <text x="280" y="303" fill="#e2e8f0" font-size="11" font-family="system-ui">Zone B - Clothing</text>
+  <text x="280" y="317" fill="#22c55e" font-size="10" font-family="system-ui">4,120 items</text>
+  <rect x="220" y="335" width="240" height="50" fill="#0f172a" rx="6"/>
+  <rect x="230" y="345" width="40" height="30" fill="#eab308" rx="4" opacity="0.3"/>
+  <text x="280" y="358" fill="#e2e8f0" font-size="11" font-family="system-ui">Zone C - Food &amp; Beverages</text>
+  <text x="280" y="372" fill="#22c55e" font-size="10" font-family="system-ui">3,890 items</text>
+  <rect x="220" y="390" width="240" height="50" fill="#0f172a" rx="6"/>
+  <rect x="230" y="400" width="40" height="30" fill="#ef4444" rx="4" opacity="0.3"/>
+  <text x="280" y="413" fill="#e2e8f0" font-size="11" font-family="system-ui">Zone D - Fragile</text>
+  <text x="280" y="427" fill="#22c55e" font-size="10" font-family="system-ui">2,497 items</text>
+  <rect x="500" y="180" width="280" height="300" fill="#1e293b" rx="8"/>
+  <text x="520" y="210" fill="#e2e8f0" font-size="14" font-weight="bold" font-family="system-ui">Recent Shipments</text>
+  <rect x="520" y="225" width="240" height="28" fill="#0f172a" rx="4"/>
+  <text x="530" y="243" fill="#94a3b8" font-size="10" font-family="system-ui">SHP-001 → Delivered</text>
+  <rect x="520" y="258" width="240" height="28" fill="#0f172a" rx="4"/>
+  <text x="530" y="276" fill="#eab308" font-size="10" font-family="system-ui">SHP-002 → In Transit</text>
+  <rect x="520" y="291" width="240" height="28" fill="#0f172a" rx="4"/>
+  <text x="530" y="309" fill="#3b82f6" font-size="10" font-family="system-ui">SHP-003 → Processing</text>
+  <rect x="520" y="324" width="240" height="28" fill="#0f172a" rx="4"/>
+  <text x="530" y="342" fill="#22c55e" font-size="10" font-family="system-ui">SHP-004 → Delivered</text>
+  <rect x="520" y="357" width="240" height="28" fill="#0f172a" rx="4"/>
+  <text x="530" y="375" fill="#eab308" font-size="10" font-family="system-ui">SHP-005 → In Transit</text>
+  <rect x="520" y="390" width="240" height="28" fill="#0f172a" rx="4"/>
+  <text x="530" y="408" fill="#3b82f6" font-size="10" font-family="system-ui">SHP-006 → Processing</text>
+  <rect x="520" y="423" width="240" height="28" fill="#0f172a" rx="4"/>
+  <text x="530" y="441" fill="#22c55e" font-size="10" font-family="system-ui">SHP-007 → Delivered</text>
+</svg>

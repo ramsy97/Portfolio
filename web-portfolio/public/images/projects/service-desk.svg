@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg3)" rx="12"/>
+  <rect x="20" y="20" width="760" height="40" fill="#1e293b" rx="8"/>
+  <circle cx="40" cy="40" r="6" fill="#ef4444"/>
+  <circle cx="56" cy="40" r="6" fill="#eab308"/>
+  <circle cx="72" cy="40" r="6" fill="#22c55e"/>
+  <text x="400" y="44" textAnchor="middle" fill="#94a3b8" font-size="13" font-family="system-ui">IT Service Desk &amp; Helpdesk</text>
+  <rect x="20" y="70" width="160" height="410" fill="#1e293b" rx="8"/>
+  <rect x="32" y="86" width="136" height="8" fill="#334155" rx="4"/>
+  <rect x="32" y="106" width="100" height="8" fill="#334155" rx="4"/>
+  <rect x="32" y="136" width="136" height="30" fill="#f59e0b" rx="6" opacity="0.9"/>
+  <text x="100" y="155" textAnchor="middle" fill="white" font-size="11" font-family="system-ui">Tickets</text>
+  <text x="48" y="190" fill="#94a3b8" font-size="11" font-family="system-ui">Knowledge Base</text>
+  <text x="48" y="220" fill="#94a3b8" font-size="11" font-family="system-ui">Analytics</text>
+  <text x="48" y="250" fill="#94a3b8" font-size="11" font-family="system-ui">Settings</text>
+  <rect x="200" y="70" width="580" height="100" fill="#1e293b" rx="8"/>
+  <rect x="220" y="86" width="170" height="70" fill="#0f172a" rx="6"/>
+  <text x="230" y="106" fill="#94a3b8" font-size="10" font-family="system-ui">Open Tickets</text>
+  <text x="230" y="135" fill="#ef4444" font-size="24" font-weight="bold" font-family="system-ui">18</text>
+  <rect x="400" y="86" width="170" height="70" fill="#0f172a" rx="6"/>
+  <text x="410" y="106" fill="#94a3b8" font-size="10" font-family="system-ui">In Progress</text>
+  <text x="410" y="135" fill="#eab308" font-size="24" font-weight="bold" font-family="system-ui">12</text>
+  <rect x="580" y="86" width="170" height="70" fill="#0f172a" rx="6"/>
+  <text x="590" y="106" fill="#94a3b8" font-size="10" font-family="system-ui">Resolved Today</text>
+  <text x="590" y="135" fill="#22c55e" font-size="24" font-weight="bold" font-family="system-ui">34</text>
+  <rect x="200" y="180" width="580" height="300" fill="#1e293b" rx="8"/>
+  <text x="220" y="210" fill="#e2e8f0" font-size="14" font-weight="bold" font-family="system-ui">All Tickets</text>
+  <rect x="220" y="225" width="540" height="32" fill="#0f172a" rx="4"/>
+  <text x="230" y="245" fill="#ef4444" font-size="10" font-weight="bold" font-family="system-ui">TK-101</text>
+  <text x="310" y="245" fill="#e2e8f0" font-size="10" font-family="system-ui">Printer not responding</text>
+  <text x="520" y="245" fill="#94a3b8" font-size="10" font-family="system-ui">Hardware</text>
+  <rect x="680" y="233" width="60" height="16" fill="#ef4444" rx="8" opacity="0.2"/>
+  <text x="710" y="245" textAnchor="middle" fill="#ef4444" font-size="9" font-family="system-ui">Open</text>
+  <rect x="220" y="262" width="540" height="32" fill="#0f172a" rx="4"/>
+  <text x="230" y="282" fill="#eab308" font-size="10" font-weight="bold" font-family="system-ui">TK-100</text>
+  <text x="310" y="282" fill="#e2e8f0" font-size="10" font-family="system-ui">VPN connection timeout</text>
+  <text x="520" y="282" fill="#94a3b8" font-size="10" font-family="system-ui">Network</text>
+  <rect x="680" y="270" width="60" height="16" fill="#eab308" rx="8" opacity="0.2"/>
+  <text x="710" y="282" textAnchor="middle" fill="#eab308" font-size="9" font-family="system-ui">Progress</text>
+  <rect x="220" y="299" width="540" height="32" fill="#0f172a" rx="4"/>
+  <text x="230" y="319" fill="#3b82f6" font-size="10" font-weight="bold" font-family="system-ui">TK-099</text>
+  <text x="310" y="319" fill="#e2e8f0" font-size="10" font-family="system-ui">Software installation request</text>
+  <text x="520" y="319" fill="#94a3b8" font-size="10" font-family="system-ui">Software</text>
+  <rect x="680" y="307" width="60" height="16" fill="#3b82f6" rx="8" opacity="0.2"/>
+  <text x="710" y="319" textAnchor="middle" fill="#3b82f6" font-size="9" font-family="system-ui">Review</text>
+  <rect x="220" y="336" width="540" height="32" fill="#0f172a" rx="4"/>
+  <text x="230" y="356" fill="#22c55e" font-size="10" font-weight="bold" font-family="system-ui">TK-098</text>
+  <text x="310" y="356" fill="#e2e8f0" font-size="10" font-family="system-ui">Email not syncing</text>
+  <text x="520" y="356" fill="#94a3b8" font-size="10" font-family="system-ui">Software</text>
+  <rect x="680" y="344" width="60" height="16" fill="#22c55e" rx="8" opacity="0.2"/>
+  <text x="710" y="356" textAnchor="middle" fill="#22c55e" font-size="9" font-family="system-ui">Resolved</text>
+  <rect x="220" y="373" width="540" height="32" fill="#0f172a" rx="4"/>
+  <text x="230" y="393" fill="#22c55e" font-size="10" font-weight="bold" font-family="system-ui">TK-097</text>
+  <text x="310" y="393" fill="#e2e8f0" font-size="10" font-family="system-ui">WiFi coverage issue</text>
+  <text x="520" y="393" fill="#94a3b8" font-size="10" font-family="system-ui">Network</text>
+  <rect x="680" y="381" width="60" height="16" fill="#22c55e" rx="8" opacity="0.2"/>
+  <text x="710" y="393" textAnchor="middle" fill="#22c55e" font-size="9" font-family="system-ui">Resolved</text>
+  <rect x="220" y="410" width="540" height="32" fill="#0f172a" rx="4"/>
+  <text x="230" y="430" fill="#ef4444" font-size="10" font-weight="bold" font-family="system-ui">TK-096</text>
+  <text x="310" y="430" fill="#e2e8f0" font-size="10" font-family="system-ui">Blue screen on workstation</text>
+  <text x="520" y="430" fill="#94a3b8" font-size="10" font-family="system-ui">Hardware</text>
+  <rect x="680" y="418" width="60" height="16" fill="#ef4444" rx="8" opacity="0.2"/>
+  <text x="710" y="430" textAnchor="middle" fill="#ef4444" font-size="9" font-family="system-ui">Open</text>
+</svg>
