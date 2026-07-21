@@ -176,7 +176,7 @@ export const id = {
         title: "Operator Produksi",
         company: "PT Yamaha Motor Electronics Indonesia",
         location: "Cibitung, Bekasi",
-        period: "Nov 2017 — Nov 2018",
+        period: "May 2017 — Nov 2018",
         type: "work" as const,
         description: [
           "Memasukkan data produksi harian ke dalam sistem inventaris internal dengan akurasi tinggi dan ketepatan waktu yang ketat",

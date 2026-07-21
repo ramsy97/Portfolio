@@ -354,7 +354,7 @@ export const experiences: Experience[] = [
     title: "Operator Produksi",
     company: "PT Yamaha Motor Electronics Indonesia",
     location: "Cibitung, Bekasi",
-    period: "Nov 2017 — Nov 2018",
+    period: "May 2017 — Nov 2018",
     type: "work",
     description: [
       "Inputted daily production data into internal inventory system with high accuracy and strict adherence to deadlines",
