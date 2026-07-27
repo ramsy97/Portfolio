@@ -68,6 +68,18 @@ export const en = {
     all: "All",
     data: [
       {
+        id: "cafepos",
+        title: "CafePOS",
+        category: "Full-Stack",
+        description: "Modern Point-of-Sale (POS) system for cafes with order management, real-time billing, receipt generation, and sales analytics.",
+        longDescription: "A full-featured Point-of-Sale system built specifically for cafe environments. Features include table management, menu categorization, real-time order processing, digital receipt generation, and comprehensive sales analytics with interactive charts.",
+        problem: "Cafes need a fast, intuitive POS system that handles table management, order processing, invoice generation, and sales tracking without the complexity and cost of enterprise solutions.",
+        solution: "Built a modern POS with a clean interface for quick order entry, table flow management, auto-calculated billing with tax, PDF receipt export, and a real-time sales dashboard with Recharts visualizations.",
+        role: "Full-Stack Developer — Built the complete application with Next.js 16, React 19, Prisma ORM, Zustand state management, and deployed on Vercel.",
+        features: ["Table management with status tracking", "Menu categorization & item management", "Quick order entry interface", "Auto-calculated billing with tax", "PDF receipt generation (jsPDF)", "Sales analytics with charts", "Real-time order processing", "Responsive design for tablets"],
+        architecture: "Next.js 16 App Router + React 19 → Prisma ORM → SQLite. Zustand for client state management. Recharts for sales dashboards. jsPDF + html2canvas for receipt generation.",
+      },
+      {
         id: "erp-inventory",
         title: "ERP Inventory System",
         category: "Full-Stack",
