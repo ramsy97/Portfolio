@@ -313,6 +313,7 @@ export const projects: Project[] = [
     ],
     architecture: "React + Redux Toolkit SPA → Node.js/Express REST API → Prisma ORM → PostgreSQL. JWT auth with Bcrypt password hashing and Multer for file uploads.",
     image: "/images/projects/ecommerce.svg",
+    liveUrl: "https://shopmodern.vercel.app/",
     githubUrl: "https://github.com/ramsy97/Online-Shopping",
     tags: ["Node.js", "React", "Redux", "Prisma"],
   },
