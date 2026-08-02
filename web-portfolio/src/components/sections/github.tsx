@@ -76,7 +76,7 @@ export function GithubSection() {
         </motion.div>
 
         {loading ? (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {[1, 2, 3].map((i) => (
               <Card key={i} className="animate-pulse border-border">
                 <div className="h-16 sm:h-20 bg-muted rounded-xl" />
@@ -85,7 +85,7 @@ export function GithubSection() {
             ))}
           </div>
         ) : (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
