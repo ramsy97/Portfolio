@@ -119,7 +119,7 @@ export function Projects() {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/[0.06] transition-colors duration-300" />
                   </div>
@@ -204,7 +204,7 @@ export function Projects() {
               <img
                 src={selectedProject.image}
                 alt={selectedProject.title}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
             </div>
 
