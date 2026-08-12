@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, Copy, Check } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Copy, Check, Loader2 } from "lucide-react";
 import { LinkedinIcon, GithubIcon, InstagramIcon } from "@/components/ui/brand-icons";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -16,6 +16,7 @@ export function Contact() {
   const [copied, setCopied] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [sending, setSending] = useState(false);
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
   const contactLinks = [
     { icon: Mail, label: "Email", value: siteConfig.email, href: `mailto:${siteConfig.email}` },
@@ -32,18 +33,24 @@ export function Contact() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setSending(true);
-    const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
-    );
-    window.open(`mailto:${siteConfig.email}?subject=${subject}&body=${body}`);
-    setTimeout(() => {
-      setSending(false);
+    setStatus("idle");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) throw new Error("Request failed");
+      setStatus("success");
       setFormData({ name: "", email: "", message: "" });
-    }, 1000);
+    } catch {
+      setStatus("error");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -153,9 +160,21 @@ export function Contact() {
                   />
                 </div>
                 <Button type="submit" size="lg" className="w-full shadow-lg shadow-primary/20" disabled={sending}>
-                  <Send className="w-4 h-4" />
+                  {sending ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
                   {sending ? t.contact.sending : t.contact.sendMessage}
                 </Button>
+                {status === "success" && (
+                  <p className="flex items-center gap-2 text-sm font-medium text-green-600 dark:text-green-400">
+                    <Check className="w-4 h-4" />
+                    {t.contact.sendSuccess}
+                  </p>
+                )}
+                {status === "error" && (
+                  <p className="flex items-center gap-2 text-sm font-medium text-red-600 dark:text-red-400">
+                    <Send className="w-4 h-4" />
+                    {t.contact.sendError}
+                  </p>
+                )}
               </form>
             </Card>
           </motion.div>

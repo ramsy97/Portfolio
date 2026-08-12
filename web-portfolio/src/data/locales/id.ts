@@ -244,6 +244,8 @@ export const id = {
     messagePlaceholder: "Ceritakan tentang proyek Anda...",
     sendMessage: "Kirim Pesan",
     sending: "Mengirim...",
+    sendSuccess: "Pesan berhasil dikirim! Saya akan segera membalas.",
+    sendError: "Gagal mengirim pesan. Silakan coba lagi.",
   },
   footer: {
     tagline: "Membangun solusi digital yang bermakna.",

@@ -244,6 +244,8 @@ export const en = {
     messagePlaceholder: "Tell me about your project...",
     sendMessage: "Send Message",
     sending: "Sending...",
+    sendSuccess: "Message sent successfully! I'll get back to you soon.",
+    sendError: "Failed to send your message. Please try again.",
   },
   footer: {
     tagline: "Building digital solutions that matter.",
