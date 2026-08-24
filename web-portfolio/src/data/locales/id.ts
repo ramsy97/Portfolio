@@ -68,6 +68,18 @@ export const id = {
     all: "Semua",
     data: [
       {
+        id: "andon-monitoring",
+        title: "Sistem Andon Manufaktur Real-Time",
+        category: "Full-Stack",
+        description: "Sistem monitoring andon real-time untuk lini produksi dengan papan status mesin live, peringatan abnormalitas instan, alur eskalasi, dan analitik downtime.",
+        longDescription: "Sistem andon real-time yang terinspirasi dari praktik lean manufacturing. Sistem menyiarkan status mesin dan lini secara langsung ke dashboard lantai produksi dan papan TV melalui WebSocket, memicu peringatan andon berkode warna (hijau/kuning/merah) dengan notifikasi suara, merutekan panggilan abnormalitas melalui tingkatan Operator → Supervisor → Maintenance, serta mencatat downtime dengan kode alasan untuk analitik waktu respons dan MTTR.",
+        problem: "Lini produksi mengandalkan pelaporan manual saat mesin berhenti atau terjadi defect, sehingga supervisor sering mengetahui abnormalitas beberapa menit kemudian — memperpanjang downtime dan menyembunyikan akar masalah.",
+        solution: "Membangun platform andon berbasis WebSocket yang menyiarkan perubahan status mesin secara instan, mengeskalasi otomatis peringatan yang tidak ditanggapi, mencatat downtime dengan kode alasan, serta memvisualisasikan KPI output vs target di papan lini live dan laporan shift.",
+        role: "Full-Stack Developer — Merancang arsitektur event real-time, membangun dashboard Next.js, mengimplementasikan server Socket.IO, timer eskalasi, dan layer data Prisma/PostgreSQL.",
+        features: ["Papan andon live dengan status mesin hijau/kuning/merah", "Peringatan abnormalitas instan dengan suara & notifikasi browser", "Alur eskalasi (Operator → Supervisor → Maintenance)", "Pencatatan downtime dengan kode alasan", "Dashboard analitik waktu respons & MTTR", "Counter output live vs target per jam", "Laporan historis berbasis shift & ekspor", "Dukungan multi-lini dengan akses berbasis peran"],
+        architecture: "Frontend Next.js App Router → REST API Express + gateway WebSocket Socket.IO → Prisma ORM → PostgreSQL. Event mesin disiarkan per kanal lini; timer eskalasi latar belakang otomatis menaikkan peringatan yang tidak ditanggapi; Recharts untuk analitik MTTR & downtime.",
+      },
+      {
         id: "ai-manufacturing",
         title: "AI Manufacturing Analytics Platform",
         category: "Full-Stack",

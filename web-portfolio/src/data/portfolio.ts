@@ -137,6 +137,31 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: "andon-monitoring",
+    title: "Real-Time Manufacturing Andon System",
+    category: "Full-Stack",
+    description: "Real-time andon monitoring system for production lines with live machine status boards, instant abnormality alerts, escalation workflows, and downtime analytics.",
+    longDescription: "A real-time andon system inspired by lean manufacturing practice. It streams live machine and line status to floor dashboards and TV boards via WebSockets, triggers color-coded andon alerts (green/yellow/red) with audible notifications, routes abnormality calls through Operator → Supervisor → Maintenance escalation tiers, and records downtime with reason codes for response time and MTTR analytics.",
+    problem: "Production lines rely on manual reporting when machines stop or defects occur, so supervisors often learn about abnormalities minutes later — inflating downtime and hiding root causes.",
+    solution: "Built a WebSocket-driven andon platform that broadcasts machine state changes instantly, auto-escalates unanswered alerts, logs downtime with reason codes, and visualizes output vs target KPIs on live line boards and shift reports.",
+    role: "Full-Stack Developer — Designed the real-time event architecture, built the Next.js dashboard, implemented the Socket.IO server, escalation timers, and the Prisma/PostgreSQL data layer.",
+    techStack: ["Next.js", "TypeScript", "Socket.IO", "Node.js", "Prisma ORM", "PostgreSQL", "TailwindCSS", "Recharts"],
+    features: [
+      "Live andon board with green/yellow/red machine status",
+      "Instant abnormality alerts with sound & browser notifications",
+      "Escalation workflow (Operator → Supervisor → Maintenance)",
+      "Downtime logging with reason codes",
+      "Response time & MTTR analytics dashboard",
+      "Live output vs hourly target counters",
+      "Shift-based historical reports & export",
+      "Multi-line support with role-based access",
+    ],
+    architecture: "Next.js App Router frontend → Express REST API + Socket.IO WebSocket gateway → Prisma ORM → PostgreSQL. Machine events broadcast per-line channels; background escalation timers auto-promote unacknowledged alerts; Recharts for MTTR & downtime analytics.",
+    image: "/images/projects/andon-monitoring.webp",
+    githubUrl: "https://github.com/ramsy97/Manufacturing-Andon-System",
+    tags: ["Next.js", "Socket.IO", "WebSocket", "PostgreSQL"],
+  },
+  {
     id: "ai-manufacturing",
     title: "AI Manufacturing Analytics Platform",
     category: "Full-Stack",
