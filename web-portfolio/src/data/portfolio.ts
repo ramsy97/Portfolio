@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Ramy Syafitri",
   title: "Ramy Syafitri — Software Engineer",
   description: "Full-Stack Developer specializing in modern web applications, ERP systems, and digital solutions. Building fast, efficient, and user-friendly applications.",
-  url: "https://ramy-syafitri.vercel.app",
+  url: "https://ramysyafitri.vercel.app",
   email: "ramysyafitri8@gmail.com",
   phone: "+6285156414903",
   location: "Bekasi, Indonesia",
