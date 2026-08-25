@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Star, GitFork, Users, Folder } from "lucide-react";
+import { Folder } from "lucide-react";
 import { GithubIcon } from "@/components/ui/brand-icons";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -105,25 +105,9 @@ export function GithubSection() {
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Users className="w-4 h-4" /> {t.github.followers}
+                      <Folder className="w-4 h-4" /> {t.github.publicProjects}
                     </span>
-                    <span className="font-bold">{profile?.followers || 0}</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Star className="w-4 h-4" /> {t.github.totalStars}
-                    </span>
-                    <span className="font-bold">
-                      {repos.reduce((acc, r) => acc + r.stargazers_count, 0)}
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <GitFork className="w-4 h-4" /> {t.github.totalForks}
-                    </span>
-                    <span className="font-bold">
-                      {repos.reduce((acc, r) => acc + r.forks_count, 0)}
-                    </span>
+                    <span className="font-bold">{profile?.public_repos || 0}</span>
                   </div>
                 </div>
               </Card>

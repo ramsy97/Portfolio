@@ -14,14 +14,9 @@ export const siteConfig = {
 };
 
 export const jobInterests = [
-  "Full-Stack Developer",
-  "Frontend Engineer",
-  "Backend Engineer",
   "Web Developer",
-  "IT Support",
-  "DevOps Engineer",
-  "Data Administration",
-  "Data Processing",
+  "Full-Stack Developer",
+  "Software Engineer",
 ];
 
 export type NavItem = {
@@ -341,30 +336,29 @@ export const projects: Project[] = [
     tags: ["TypeScript", "React", "Charts"],
   },
   {
-    id: "online-shopping",
-    title: "E-Commerce Platform",
+    id: "nexus-crm",
+    title: "Nexus CRM — Enterprise CRM System",
     category: "Full-Stack",
-    description: "Full-stack e-commerce application with product management, cart system, user auth, and order processing.",
-    longDescription: "A complete e-commerce solution featuring product catalog management, shopping cart functionality, secure checkout, and order management with both customer and admin interfaces.",
-    problem: "Building a complete e-commerce platform requires handling product management, user authentication, cart logic, payment flow, and order tracking — all interconnected.",
-    solution: "Developed a full-stack e-commerce app with Redux state management, Prisma ORM for database operations, and comprehensive CRUD operations for products and orders.",
-    role: "Full-Stack Developer — Built React frontend with Redux Toolkit, Node.js/Express backend, Prisma ORM database layer.",
-    techStack: ["Node.js", "Express", "Prisma ORM", "React", "Redux Toolkit", "TailwindCSS", "JWT", "Bcrypt", "Multer"],
+    description: "Production-ready enterprise CRM with role-based dashboards, lead-to-quote pipeline, SLA ticketing, marketing campaigns, reports, and audit logging.",
+    longDescription: "A production-ready enterprise CRM built from a formal PRD, covering customers & contacts with timelines, lead scoring and conversion, an opportunities kanban pipeline with weighted forecasting, server-priced quotations with a manager approval workflow, SLA-driven support tickets, marketing campaigns with ROI tracking, role-specific reports, and admin tooling with a permission matrix and immutable audit logs.",
+    problem: "Sales, marketing, and support teams need one connected system where customer data, deals, quotations, and after-sales tickets stay in sync — with strict access control and accountability for every change.",
+    solution: "Built a modular NestJS + Next.js platform with RBAC enforced at route level, JWT refresh-token rotation, server-side quotation pricing from catalog prices, an SLA state machine for tickets, and role-specific KPI dashboards.",
+    role: "Full-Stack Developer — Designed the PRD-driven architecture, built the NestJS API and Next.js 15 frontend, implemented RBAC guards, approval workflows, and audit logging.",
+    techStack: ["Next.js 15", "React 19", "NestJS 11", "TypeScript", "Prisma ORM", "PostgreSQL", "TanStack Query", "Zustand", "TailwindCSS"],
     features: [
-      "Product catalog with search & filter",
-      "Shopping cart management",
-      "User registration & authentication",
-      "Order processing workflow",
-      "Admin product management",
-      "Image upload for products",
-      "Responsive storefront",
-      "Secure password hashing (Bcrypt)",
+      "Role-specific dashboards (management / sales / marketing / support)",
+      "Customers & contacts with detail timeline and related deals",
+      "Lead scoring with convert-to-customer + opportunity flow",
+      "Opportunities kanban pipeline with weighted forecast",
+      "Quotation approval workflow with server-side pricing",
+      "SLA-driven tickets (CRITICAL 4h → LOW 72h) with breach alerts",
+      "Marketing campaigns with budget & ROI tracking",
+      "Permission matrix, audit logs & in-app notifications",
     ],
-    architecture: "React + Redux Toolkit SPA → Node.js/Express REST API → Prisma ORM → PostgreSQL. JWT auth with Bcrypt password hashing and Multer for file uploads.",
-    image: "/images/projects/online-shopping.webp",
-    liveUrl: "https://shopmodern.vercel.app/",
-    githubUrl: "https://github.com/ramsy97/Online-Shopping",
-    tags: ["Node.js", "React", "Redux", "Prisma"],
+    architecture: "Next.js 15 App Router (React 19, TanStack Query, Zustand) → NestJS 11 REST API with Swagger → Prisma ORM → PostgreSQL. JWT access tokens (15m) + rotating hashed refresh tokens (7d); RBAC via module:action permission guards; immutable audit log on all significant mutations.",
+    image: "/images/projects/nexus-crm.png",
+    githubUrl: "https://github.com/ramsy97/Enterprise-CRM-System-Full-Stack-Web-Application",
+    tags: ["Next.js", "NestJS", "PostgreSQL", "RBAC"],
   },
 ];
 
@@ -426,15 +420,3 @@ export const stats = [
   { label: "Years Learning", value: 4, suffix: "+" },
 ];
 
-export const aboutContent = {
-  bio: `Detail-oriented Information Systems Graduate with a solid foundation in full-stack web development (JavaScript, Python, PHP) and IT infrastructure support. Proven track record in building secure Point-of-Sale (POS) and real-time management systems using modern tech stacks (React 19, FastAPI, Vue 3). Highly disciplined with prior manufacturing operations experience, combining strong data verification skills with a systematic approach to technical troubleshooting.`,
-  vision: `Ready to contribute as an Associate Software Engineer, Full-Stack Developer, or IT Support Specialist. I aim to build digital solutions that make businesses more efficient and people's lives easier.`,
-  highlights: [
-    "Full-Stack Web Development (React, Vue.js, Python, Node.js)",
-    "ERP & POS System Architecture",
-    "Real-time Application Development",
-    "IT Infrastructure & Troubleshooting",
-    "Data Analysis & Verification",
-    "Clean Code & Documentation",
-  ],
-};

@@ -1,10 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle, GraduationCap, Briefcase, Target } from "lucide-react";
+import { Briefcase, Layers, Workflow } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useLanguage } from "@/contexts/language-context";
+
+const focusIcons = {
+  briefcase: Briefcase,
+  layers: Layers,
+  workflow: Workflow,
+} as const;
 
 export function About() {
   const { ref: sectionRef, isVisible } = useScrollAnimation(0.1);
@@ -29,7 +35,7 @@ export function About() {
           </h2>
         </motion.div>
 
-        <div ref={cardRef} className="space-y-6 max-w-4xl mx-auto">
+        <div ref={cardRef} className="space-y-10 max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={cardVisible ? { opacity: 1, y: 0 } : {}}
@@ -41,8 +47,14 @@ export function About() {
                   <Briefcase className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-3">{t.about.professionalSummary}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{t.about.bio}</p>
+                  <h3 className="text-xl font-bold mb-3">{t.about.aboutTitle}</h3>
+                  <div className="space-y-4">
+                    {t.about.bio.split("\n\n").map((paragraph) => (
+                      <p key={paragraph} className="text-muted-foreground leading-relaxed">
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
                 </div>
               </div>
             </Card>
@@ -53,85 +65,31 @@ export function About() {
             animate={cardVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <Card className="p-5 md:p-8 lg:p-10 border-border">
-              <div className="flex items-start gap-3 sm:gap-5">
-                <div className="p-2.5 sm:p-3 rounded-2xl bg-primary/15 text-primary shrink-0">
-                  <Target className="w-5 h-5 sm:w-6 sm:h-6" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-3">{t.about.vision}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{t.about.visionText}</p>
-                </div>
-              </div>
-            </Card>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={cardVisible ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
-            <h3 className="text-xl font-bold mb-5">{t.about.keyCompetencies}</h3>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-              {t.about.highlights.map((competency, i) => (
-                <motion.div
-                  key={competency}
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={cardVisible ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.3, delay: 0.35 + i * 0.05 }}
-                >
-                  <Card hover className="flex items-center gap-3 py-4 px-5 border-border">
-                    <CheckCircle className="w-4 h-4 text-primary shrink-0" />
-                    <span className="text-sm font-medium leading-snug">{competency}</span>
-                  </Card>
-                </motion.div>
-              ))}
+            <h3 className="text-xl font-bold mb-5">{t.about.focusTitle}</h3>
+            <div className="grid gap-4 sm:grid-cols-3">
+              {t.about.focusItems.map((item, i) => {
+                const Icon = focusIcons[item.icon];
+                return (
+                  <motion.div
+                    key={item.title}
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={cardVisible ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.35, delay: 0.25 + i * 0.08 }}
+                    className="h-full"
+                  >
+                    <Card hover className="p-5 border-border h-full">
+                      <div className="p-2.5 rounded-xl bg-primary/15 text-primary w-fit mb-4">
+                        <Icon className="w-5 h-5" />
+                      </div>
+                      <h4 className="font-bold mb-2">{item.title}</h4>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {item.description}
+                      </p>
+                    </Card>
+                  </motion.div>
+                );
+              })}
             </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={cardVisible ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            <Card className="p-5 md:p-8 lg:p-10 border-border">
-              <div className="flex items-start gap-3 sm:gap-5">
-                <div className="p-2.5 sm:p-3 rounded-2xl bg-primary/15 text-primary shrink-0">
-                  <GraduationCap className="w-5 h-5 sm:w-6 sm:h-6" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2">{t.about.education}</h3>
-                  <p className="font-semibold">{t.about.diploma}</p>
-                  <p className="text-muted-foreground text-sm mt-0.5">
-                    {t.about.university} — 2018 – 2021
-                  </p>
-                  <p className="text-muted-foreground text-sm">{t.about.gpa}</p>
-                  <p className="text-muted-foreground text-sm mt-3 leading-relaxed">
-                    {t.about.diplomaCoursework}
-                  </p>
-                </div>
-              </div>
-            </Card>
-
-            <Card className="mt-6 p-5 md:p-8 lg:p-10 border-border">
-              <div className="flex items-start gap-3 sm:gap-5">
-                <div className="p-2.5 sm:p-3 rounded-2xl bg-primary/15 text-primary shrink-0">
-                  <GraduationCap className="w-5 h-5 sm:w-6 sm:h-6" />
-                </div>
-                <div>
-                  <p className="font-semibold">{t.about.smk}</p>
-                  <p className="text-muted-foreground text-sm mt-0.5">
-                    {t.about.smkSchool} — Jul 2012 – May 2015
-                  </p>
-                  <p className="text-muted-foreground text-sm">
-                    {t.about.smkScore}
-                  </p>
-                  <p className="text-muted-foreground text-sm mt-3 leading-relaxed">
-                    {t.about.smkCoursework}
-                  </p>
-                </div>
-              </div>
-            </Card>
           </motion.div>
         </div>
       </div>
