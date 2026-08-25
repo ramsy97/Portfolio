@@ -163,7 +163,7 @@ export const en = {
         id: "nexus-crm",
         title: "Nexus - CRM System",
         category: "Full-Stack",
-        description: "Production-ready enterprise CRM with role-based dashboards, lead-to-quote pipeline, SLA ticketing, marketing campaigns, reports, and audit logging.",
+        description: "Enterprise-style CRM system with role-based dashboards, lead-to-quote pipeline, SLA ticketing, marketing campaigns, reports, and audit logging.",
         longDescription: "A production-ready enterprise CRM built from a formal PRD, covering customers & contacts with timelines, lead scoring and conversion, an opportunities kanban pipeline with weighted forecasting, server-priced quotations with a manager approval workflow, SLA-driven support tickets, marketing campaigns with ROI tracking, role-specific reports, and admin tooling with a permission matrix and immutable audit logs.",
         problem: "Sales, marketing, and support teams need one connected system where customer data, deals, quotations, and after-sales tickets stay in sync — with strict access control and accountability for every change.",
         solution: "Built a modular NestJS + Next.js platform with RBAC enforced at route level, JWT refresh-token rotation, server-side quotation pricing from catalog prices, an SLA state machine for tickets, and role-specific KPI dashboards.",

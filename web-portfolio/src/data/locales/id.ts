@@ -163,7 +163,7 @@ export const id = {
         id: "nexus-crm",
         title: "Nexus - CRM System",
         category: "Full-Stack",
-        description: "CRM enterprise siap produksi dengan dashboard berbasis peran, pipeline lead-to-quote, tiket SLA, kampanye pemasaran, laporan, dan audit log.",
+        description: "Sistem CRM enterprise-style dengan dashboard berbasis peran, pipeline lead-to-quote, tiket SLA, kampanye pemasaran, laporan, dan audit log.",
         longDescription: "CRM enterprise siap produksi yang dibangun dari PRD formal, mencakup pelanggan & kontak dengan timeline, scoring dan konversi lead, pipeline kanban peluang dengan weighted forecast, quotation dengan harga dihitung server dan alur persetujuan manajer, tiket dukungan berbasis SLA, kampanye pemasaran dengan pelacakan ROI, laporan per peran, serta tooling admin dengan matriks permission dan audit log permanen.",
         problem: "Tim penjualan, pemasaran, dan dukungan membutuhkan satu sistem terhubung agar data pelanggan, deal, quotation, dan tiket purna jual selalu sinkron — dengan kontrol akses ketat dan akuntabilitas untuk setiap perubahan.",
         solution: "Membangun platform NestJS + Next.js modular dengan RBAC yang ditegakkan di level route, rotasi refresh token JWT, harga quotation dihitung server dari katalog produk, state machine SLA untuk tiket, dan dashboard KPI spesifik per peran.",
