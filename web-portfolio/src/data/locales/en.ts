@@ -179,19 +179,25 @@ export const en = {
     titleHighlight: "journey",
     work: "Work",
     learning: "Learning",
+    responsibilitiesLabel: "Responsibilities",
+    learnedLabel: "What I Learned",
     data: [
       {
-        title: "Operator Produksi",
+        title: "Production Operator",
         company: "PT Yamaha Motor Electronics Indonesia",
-        location: "Cibitung, Bekasi",
+        location: "Cibitung, Indonesia",
         period: "May 2017 — Nov 2018",
         type: "work" as const,
-        description: [
-          "Inputted daily production data into internal inventory system with high accuracy and strict adherence to deadlines",
-          "Documented component inspection results (OK/NG) into structured daily reports using advanced Excel",
-          "Executed double-check validation procedures on inventory data prior to QC submission, reducing data errors by 10%",
-          "Maintained highly organized archives for daily operational logs and documentation",
+        summary: "Worked in a manufacturing environment with responsibilities related to production data, component inspection, quality validation, and operational reporting.",
+        responsibilities: [
+          "Recorded and maintained daily production data to support operational reporting.",
+          "Performed component inspections and documented **OK/NG** results according to quality procedures.",
+          "Verified production and inspection records to maintain data accuracy before QC submission.",
+          "Followed production standards, work instructions, and quality control procedures.",
+          "Collaborated with production and quality teams to maintain accurate operational records.",
         ],
+        learned: "This experience gave me firsthand understanding of **manufacturing workflows, production data, quality control, and operational processes**. It later influenced my interest in building software solutions for **manufacturing, inventory, and business operations**.",
+        description: [],
       },
       {
         title: "Information Systems Student",

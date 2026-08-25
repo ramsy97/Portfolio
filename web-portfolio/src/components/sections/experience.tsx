@@ -16,8 +16,37 @@ const typeColors: Record<string, string> = {
   learning: "bg-purple-500",
 };
 
+type ExperienceItem = {
+  title: string;
+  company: string;
+  location: string;
+  period: string;
+  type: "work" | "learning";
+  description: string[];
+  summary?: string;
+  responsibilities?: string[];
+  learned?: string;
+};
+
+function InlineBold({ text }: { text: string }) {
+  const parts = text.split("**");
+  return (
+    <>
+      {parts.map((part, i) =>
+        i % 2 === 1 ? (
+          <strong key={i} className="font-semibold text-foreground">
+            {part}
+          </strong>
+        ) : (
+          <span key={i}>{part}</span>
+        )
+      )}
+    </>
+  );
+}
+
 export function Experience() {
-  const { ref, isVisible } = useScrollAnimation(0.1);
+  const { ref, isVisible } = useScrollAnimation(0.05);
   const { t, lang } = useLanguage();
 
   const typeLabels: Record<string, { label: string; className: string }> = {
@@ -38,76 +67,103 @@ export function Experience() {
             {t.experience.sectionLabel}
           </p>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
-            {lang === "id" ? "" : "My "}
-            <span className="gradient-text">{t.experience.titleHighlight}</span>
-            {lang === "id" ? " Saya" : ""}
+            {lang === "id" ? (
+              <>
+                {t.experience.title}{" "}
+                <span className="gradient-text">{t.experience.titleHighlight}</span>
+              </>
+            ) : (
+              <>
+                My <span className="gradient-text">{t.experience.titleHighlight}</span>
+              </>
+            )}
           </h2>
         </motion.div>
 
-        <div className="relative max-w-3xl mx-auto">
-          <div className="absolute left-[19px] md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
+        <div className="relative max-w-2xl mx-auto">
+          <div className="absolute left-[7px] md:left-[9px] top-2 bottom-2 w-px bg-border" />
 
-          {t.experience.data.map((exp, i) => {
-            const isEven = i % 2 === 0;
-            const info = typeLabels[exp.type] || typeLabels.work;
+          <div className="space-y-6 md:space-y-8">
+            {(t.experience.data as unknown as ExperienceItem[]).map((exp, i) => {
+              const info = typeLabels[exp.type] || typeLabels.work;
+              const isRich = typeof exp.summary === "string";
 
-            return (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: isEven ? -20 : 20 }}
-                animate={isVisible ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.5, delay: i * 0.12 }}
-                className="relative mb-8 sm:mb-10 last:mb-0 md:grid md:grid-cols-2 md:gap-10"
-              >
-                <div
-                  className={cn(
-                    "absolute left-[15px] md:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full border-[3px] border-background z-10 top-6",
-                    typeColors[exp.type]
-                  )}
-                />
-
-                <div
-                  className={cn(
-                    "ml-10 md:ml-0",
-                    isEven ? "md:col-start-1 md:text-right" : "md:col-start-2"
-                  )}
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isVisible ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.45, delay: i * 0.08 }}
+                  className="relative pl-10 md:pl-14"
                 >
-                  <div className="rounded-2xl border border-border bg-card p-4 sm:p-5 md:p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
-                    <div className={cn("flex items-center gap-2 mb-3", isEven && "md:justify-end")}>
-                      <span className={cn(
+                  <span
+                    className={cn(
+                      "absolute left-0 md:left-[2px] top-7 w-[15px] h-[15px] md:w-[19px] md:h-[19px] rounded-full border-[3px] border-background",
+                      typeColors[exp.type]
+                    )}
+                  />
+
+                  <div className="rounded-2xl border border-border bg-card p-5 md:p-6 shadow-sm hover:shadow-md hover:border-primary/40 transition-all duration-300">
+                    <span
+                      className={cn(
                         "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold",
                         info.className
-                      )}>
-                        {typeIcons[exp.type]}
-                        {info.label}
-                      </span>
-                    </div>
-                    <h3 className="text-base sm:text-lg font-bold">{exp.title}</h3>
-                    <p className="text-sm font-semibold text-primary mt-1">{exp.company}</p>
-                    <p className="text-xs text-muted-foreground mt-0.5">
-                      {exp.location} · {exp.period}
-                    </p>
-                    <ul className="mt-3 space-y-1.5">
-                      {exp.description.map((desc, j) => (
-                        <li
-                          key={j}
-                          className={cn(
-                            "text-sm text-muted-foreground leading-relaxed flex items-start gap-2",
-                            isEven ? "md:text-right md:flex-row-reverse" : ""
-                          )}
-                        >
-                          <span>{desc}</span>
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0 mt-2" />
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+                      )}
+                    >
+                      {typeIcons[exp.type]}
+                      {info.label}
+                    </span>
 
-                {isEven && <div className="hidden md:block md:col-start-2" />}
-              </motion.div>
-            );
-          })}
+                    <h3 className="text-base sm:text-lg font-bold mt-3">{exp.company}</h3>
+                    <p className="text-sm font-semibold text-primary mt-0.5">{exp.title}</p>
+                    <p className="text-xs text-muted-foreground mt-1">
+                      {exp.period} · {exp.location}
+                    </p>
+
+                    {isRich ? (
+                      <>
+                        <p className="text-sm text-muted-foreground leading-relaxed mt-3">
+                          <InlineBold text={exp.summary!} />
+                        </p>
+                        <h4 className="text-sm font-bold mt-4 mb-2">
+                          {t.experience.responsibilitiesLabel}
+                        </h4>
+                        <ul className="space-y-1.5">
+                          {(exp.responsibilities ?? []).map((desc, j) => (
+                            <li
+                              key={j}
+                              className="text-sm text-muted-foreground leading-relaxed flex items-start gap-2"
+                            >
+                              <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0 mt-2" />
+                              <span><InlineBold text={desc} /></span>
+                            </li>
+                          ))}
+                        </ul>
+                        <h4 className="text-sm font-bold mt-4 mb-2">
+                          {t.experience.learnedLabel}
+                        </h4>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          <InlineBold text={exp.learned!} />
+                        </p>
+                      </>
+                    ) : (
+                      <ul className="mt-3 space-y-1.5">
+                        {exp.description.map((desc, j) => (
+                          <li
+                            key={j}
+                            className="text-sm text-muted-foreground leading-relaxed flex items-start gap-2"
+                          >
+                            <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0 mt-2" />
+                            <span>{desc}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

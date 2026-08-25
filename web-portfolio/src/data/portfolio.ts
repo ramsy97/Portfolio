@@ -362,57 +362,6 @@ export const projects: Project[] = [
   },
 ];
 
-export type Experience = {
-  title: string;
-  company: string;
-  location: string;
-  period: string;
-  type: "work" | "learning";
-  description: string[];
-};
-
-export const experiences: Experience[] = [
-  {
-    title: "Operator Produksi",
-    company: "PT Yamaha Motor Electronics Indonesia",
-    location: "Cibitung, Bekasi",
-    period: "May 2017 — Nov 2018",
-    type: "work",
-    description: [
-      "Inputted daily production data into internal inventory system with high accuracy and strict adherence to deadlines",
-      "Documented component inspection results (OK/NG) into structured daily reports using advanced Excel",
-      "Executed double-check validation procedures on inventory data prior to QC submission, reducing data errors by 10%",
-      "Maintained highly organized archives for daily operational logs and documentation",
-    ],
-  },
-  {
-    title: "Information Systems Student",
-    company: "Universitas Bina Sarana Informatika",
-    location: "Bekasi, Indonesia",
-    period: "2018 — 2021",
-    type: "learning",
-    description: [
-      "Completed Diploma III in Information Systems with GPA 3.01 / 4.00",
-      "Built multiple web-based projects using PHP, MySQL, and JavaScript, applying database design and CRUD principles",
-      "Gained hands-on experience with system analysis, UI/UX design, and agile collaboration in team projects",
-      "Self-studied React, Vue.js, Python, and modern frameworks beyond coursework requirements",
-    ],
-  },
-  {
-    title: "Computer & Network Engineering",
-    company: "SMK Ristek Jaya Jakarta",
-    location: "Jakarta, Indonesia",
-    period: "Jul 2012 — May 2015",
-    type: "learning",
-    description: [
-      "Built and configured computer systems from scratch including hardware assembly, BIOS setup, and OS installation",
-      "Designed and implemented LAN networks using UTP cabling, IP addressing, and switch/router configuration",
-      "Troubleshot hardware and software issues independently, developing strong diagnostic and problem-solving skills",
-      "Installed and configured both Windows and Linux operating systems for various use cases",
-    ],
-  },
-];
-
 export type Stat = { label: string; value?: number; suffix?: string; text?: string };
 
 export const stats: Stat[] = [
