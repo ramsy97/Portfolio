@@ -413,10 +413,12 @@ export const experiences: Experience[] = [
   },
 ];
 
-export const stats = [
-  { label: "Projects Completed", value: 20, suffix: "+" },
-  { label: "Technologies", value: 15, suffix: "+" },
-  { label: "GitHub Repositories", value: 20, suffix: "" },
-  { label: "Years Learning", value: 4, suffix: "+" },
+export type Stat = { label: string; value?: number; suffix?: string; text?: string };
+
+export const stats: Stat[] = [
+  { label: "Projects Built", value: 20, suffix: "+" },
+  { label: "GitHub Repositories", value: 20, suffix: "+" },
+  { label: "Business Domains", value: 4 },
+  { label: "Web Development", text: "Full-Stack" },
 ];
 

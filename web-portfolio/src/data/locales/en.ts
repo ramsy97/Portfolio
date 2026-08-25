@@ -9,7 +9,7 @@ export const en = {
   },
   hero: {
     greeting: "Hello, I'm",
-    roles: ["Software Engineer", "Full-Stack Developer", "Web Developer", "IT Support Specialist"],
+    roles: ["Software Engineer", "Full-Stack Web Developer", "Web Developer", "IT Support Specialist"],
     bio: "I build full-stack web applications for business operations, focusing on clean interfaces, reliable APIs, database design, and practical workflows.",
     downloadCv: "Download CV",
     viewProjects: "View Projects",
@@ -232,10 +232,10 @@ export const en = {
     recentRepos: "Recent Repositories",
   },
   stats: {
-    projectsCompleted: "Projects Completed",
-    technologies: "Technologies",
+    projectsBuilt: "Projects Built",
     githubRepos: "GitHub Repositories",
-    yearsLearning: "Years Learning",
+    businessDomains: "Business Domains",
+    webDevelopment: "Web Development",
   },
   contact: {
     sectionLabel: "Contact",

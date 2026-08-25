@@ -53,10 +53,10 @@ export function Stats() {
   const { t } = useLanguage();
 
   const statLabels = [
-    t.stats.projectsCompleted,
-    t.stats.technologies,
+    t.stats.projectsBuilt,
     t.stats.githubRepos,
-    t.stats.yearsLearning,
+    t.stats.businessDomains,
+    t.stats.webDevelopment,
   ];
 
   return (
@@ -71,7 +71,13 @@ export function Stats() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="text-center"
             >
-              <AnimatedCounter end={stat.value} suffix={stat.suffix} />
+              {stat.text !== undefined ? (
+                <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold gradient-text leading-tight break-words">
+                  {stat.text}
+                </div>
+              ) : (
+                <AnimatedCounter end={stat.value ?? 0} suffix={stat.suffix ?? ""} />
+              )}
               <p className="text-sm text-muted-foreground mt-2 font-medium">{statLabels[i]}</p>
             </motion.div>
           ))}

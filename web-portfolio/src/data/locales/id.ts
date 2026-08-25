@@ -9,7 +9,7 @@ export const id = {
   },
   hero: {
     greeting: "Halo, saya",
-    roles: ["Software Engineer", "Full-Stack Developer", "Web Developer", "IT Support Specialist"],
+    roles: ["Software Engineer", "Full-Stack Web Developer", "Web Developer", "IT Support Specialist"],
     bio: "Saya membangun aplikasi web full-stack untuk operasional bisnis, dengan fokus pada antarmuka yang bersih, API yang andal, desain database, dan alur kerja yang praktis.",
     downloadCv: "Unduh CV",
     viewProjects: "Lihat Proyek",
@@ -232,10 +232,10 @@ export const id = {
     recentRepos: "Repository Terbaru",
   },
   stats: {
-    projectsCompleted: "Proyek Selesai",
-    technologies: "Teknologi",
+    projectsBuilt: "Proyek Dibangun",
     githubRepos: "Repository GitHub",
-    yearsLearning: "Tahun Belajar",
+    businessDomains: "Domain Bisnis",
+    webDevelopment: "Pengembangan Web",
   },
   contact: {
     sectionLabel: "Kontak",
