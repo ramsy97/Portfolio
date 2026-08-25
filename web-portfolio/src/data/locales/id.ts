@@ -101,7 +101,7 @@ export const id = {
       },
       {
         id: "erp-inventory",
-        title: "Sistem ERP Inventaris",
+        title: "Warung POS",
         category: "Full-Stack",
         description: "Sistem Point-of-Sale & manajemen inventaris full-stack yang dibangun untuk UMKM dengan pelacakan stok real-time dan manajemen transaksi.",
         longDescription: "Solusi ERP komprehensif yang dirancang khusus untuk usaha kecil dan menengah. Sistem ini menangani seluruh siklus manajemen inventaris, dari pengadaan hingga penjualan, dengan pembaruan stok real-time dan peringatan otomatis.",
@@ -113,7 +113,7 @@ export const id = {
       },
       {
         id: "absen-digital",
-        title: "Sistem Absensi Digital",
+        title: "Digital Attendance System",
         category: "Full-Stack",
         description: "Sistem manajemen absensi full-stack dengan check-in/out geo-fence, foto selfie, manajemen cuti, dan dashboard berbasis peran.",
         longDescription: "WorkSync Pro adalah solusi manajemen absensi komprehensif yang menampilkan check-in/out terverifikasi GPS dengan foto selfie kamera, manajemen cuti dengan alur kerja persetujuan, dashboard admin dan karyawan real-time, serta ekspor laporan dalam format PDF dan XLS.",
@@ -125,7 +125,7 @@ export const id = {
       },
       {
         id: "warehouse-management",
-        title: "Sistem Manajemen Gudang",
+        title: "Warehouse Management System",
         category: "Full-Stack",
         description: "Dashboard manajemen gudang modern dengan pelacakan inventaris real-time, manajemen pengiriman, dan analitik.",
         longDescription: "Solusi manajemen gudang canggih yang menampilkan visualisasi stok real-time, pelacakan pengiriman otomatis, dan analitik komprehensif untuk optimasi operasi gudang.",
@@ -137,7 +137,7 @@ export const id = {
       },
       {
         id: "service-desk",
-        title: "IT Service Desk & Helpdesk",
+        title: "Service Desk Helpdesk",
         category: "Web App",
         description: "Sistem tiket helpdesk IT dengan manajemen tiket, routing prioritas, dan pelacakan status untuk tim dukungan IT.",
         longDescription: "Aplikasi IT service desk profesional yang menyederhanakan manajemen tiket dukungan, mengotomasi penugasan prioritas, dan menyediakan pelacakan status real-time untuk staf IT dan pengguna akhir.",
@@ -149,7 +149,7 @@ export const id = {
       },
       {
         id: "system-finance",
-        title: "Sistem Manajemen Keuangan",
+        title: "System Finance",
         category: "Web App",
         description: "Aplikasi pelacakan keuangan pribadi dan bisnis dengan manajemen anggaran, kategori pengeluaran, dan pelaporan keuangan.",
         longDescription: "Platform manajemen keuangan komprehensif yang membantu pengguna melacak pendapatan, mengelola anggaran, mengkategorikan pengeluaran, dan membuat laporan keuangan untuk pengambilan keputusan yang lebih baik.",
@@ -161,7 +161,7 @@ export const id = {
       },
       {
         id: "nexus-crm",
-        title: "Nexus CRM — Sistem CRM Enterprise",
+        title: "Enterprise Style CRM System",
         category: "Full-Stack",
         description: "CRM enterprise siap produksi dengan dashboard berbasis peran, pipeline lead-to-quote, tiket SLA, kampanye pemasaran, laporan, dan audit log.",
         longDescription: "CRM enterprise siap produksi yang dibangun dari PRD formal, mencakup pelanggan & kontak dengan timeline, scoring dan konversi lead, pipeline kanban peluang dengan weighted forecast, quotation dengan harga dihitung server dan alur persetujuan manajer, tiket dukungan berbasis SLA, kampanye pemasaran dengan pelacakan ROI, laporan per peran, serta tooling admin dengan matriks permission dan audit log permanen.",

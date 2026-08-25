@@ -153,7 +153,7 @@ export const projects: Project[] = [
     ],
     architecture: "Next.js App Router frontend → Express REST API + Socket.IO WebSocket gateway → Prisma ORM → PostgreSQL. Machine events broadcast per-line channels; background escalation timers auto-promote unacknowledged alerts; Recharts for MTTR & downtime analytics.",
     image: "/images/projects/andon-monitoring.webp",
-    githubUrl: "https://github.com/ramsy97/Manufacturing-Andon-System",
+    githubUrl: "https://github.com/ramsy97/Real-Time-Manufacturing-Andon-System",
     tags: ["Next.js", "Socket.IO", "WebSocket", "PostgreSQL"],
   },
   {
@@ -209,7 +209,7 @@ export const projects: Project[] = [
   },
   {
     id: "erp-inventory",
-    title: "ERP Inventory System",
+    title: "Warung POS",
     category: "Full-Stack",
     description: "Full-stack Point-of-Sale & inventory management system built for SMEs with real-time stock tracking and transaction management.",
     longDescription: "A comprehensive ERP solution designed specifically for small and medium enterprises. The system handles complete inventory lifecycle management, from procurement to sales, with real-time stock updates and automated alerts.",
@@ -287,7 +287,7 @@ export const projects: Project[] = [
   },
   {
     id: "service-desk",
-    title: "IT Service Desk & Helpdesk",
+    title: "Service Desk Helpdesk",
     category: "Web App",
     description: "IT helpdesk ticketing system with ticket management, priority routing, and status tracking for IT support teams.",
     longDescription: "A professional IT service desk application that streamlines support ticket management, automates priority assignment, and provides real-time status tracking for both IT staff and end users.",
@@ -312,7 +312,7 @@ export const projects: Project[] = [
   },
   {
     id: "system-finance",
-    title: "Financial Management System",
+    title: "System Finance",
     category: "Web App",
     description: "Personal and business finance tracking application with budget management, expense categories, and financial reporting.",
     longDescription: "A comprehensive financial management platform that helps users track income, manage budgets, categorize expenses, and generate financial reports for better decision-making.",
@@ -337,7 +337,7 @@ export const projects: Project[] = [
   },
   {
     id: "nexus-crm",
-    title: "Nexus CRM — Enterprise CRM System",
+    title: "Enterprise Style CRM System",
     category: "Full-Stack",
     description: "Production-ready enterprise CRM with role-based dashboards, lead-to-quote pipeline, SLA ticketing, marketing campaigns, reports, and audit logging.",
     longDescription: "A production-ready enterprise CRM built from a formal PRD, covering customers & contacts with timelines, lead scoring and conversion, an opportunities kanban pipeline with weighted forecasting, server-priced quotations with a manager approval workflow, SLA-driven support tickets, marketing campaigns with ROI tracking, role-specific reports, and admin tooling with a permission matrix and immutable audit logs.",
@@ -357,7 +357,7 @@ export const projects: Project[] = [
     ],
     architecture: "Next.js 15 App Router (React 19, TanStack Query, Zustand) → NestJS 11 REST API with Swagger → Prisma ORM → PostgreSQL. JWT access tokens (15m) + rotating hashed refresh tokens (7d); RBAC via module:action permission guards; immutable audit log on all significant mutations.",
     image: "/images/projects/nexus-crm.png",
-    githubUrl: "https://github.com/ramsy97/Enterprise-CRM-System-Full-Stack-Web-Application",
+    githubUrl: "https://github.com/ramsy97/Enterprise-Style-CRM-System",
     tags: ["Next.js", "NestJS", "PostgreSQL", "RBAC"],
   },
 ];
