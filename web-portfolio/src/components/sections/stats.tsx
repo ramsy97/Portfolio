@@ -7,7 +7,7 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useLanguage } from "@/contexts/language-context";
 
 function AnimatedCounter({ end, suffix }: { end: number; suffix: string }) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(end);
   const ref = useRef<HTMLDivElement>(null);
   const [started, setStarted] = useState(false);
 
