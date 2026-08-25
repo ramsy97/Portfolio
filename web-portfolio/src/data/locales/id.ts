@@ -161,7 +161,7 @@ export const id = {
       },
       {
         id: "nexus-crm",
-        title: "Enterprise Style CRM System",
+        title: "Nexus - CRM System",
         category: "Full-Stack",
         description: "CRM enterprise siap produksi dengan dashboard berbasis peran, pipeline lead-to-quote, tiket SLA, kampanye pemasaran, laporan, dan audit log.",
         longDescription: "CRM enterprise siap produksi yang dibangun dari PRD formal, mencakup pelanggan & kontak dengan timeline, scoring dan konversi lead, pipeline kanban peluang dengan weighted forecast, quotation dengan harga dihitung server dan alur persetujuan manajer, tiket dukungan berbasis SLA, kampanye pemasaran dengan pelacakan ROI, laporan per peran, serta tooling admin dengan matriks permission dan audit log permanen.",
@@ -206,7 +206,7 @@ export const id = {
         period: "2018 — 2021",
         type: "learning" as const,
         description: [
-          "Menyelesaikan Diploma III Sistem Informasi dengan IPK 3.01 / 4.00",
+          "Menyelesaikan Diploma III Sistem Informasi",
           "Membangun beberapa proyek berbasis web menggunakan PHP, MySQL, dan JavaScript, menerapkan desain basis data dan prinsip CRUD",
           "Mendapatkan pengalaman praktis dalam analisis sistem, desain UI/UX, dan kolaborasi agile dalam proyek tim",
           "Belajar mandiri React, Vue.js, Python, dan framework modern di luar mata kuliah",

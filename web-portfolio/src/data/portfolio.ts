@@ -337,7 +337,7 @@ export const projects: Project[] = [
   },
   {
     id: "nexus-crm",
-    title: "Enterprise Style CRM System",
+    title: "Nexus - CRM System",
     category: "Full-Stack",
     description: "Production-ready enterprise CRM with role-based dashboards, lead-to-quote pipeline, SLA ticketing, marketing campaigns, reports, and audit logging.",
     longDescription: "A production-ready enterprise CRM built from a formal PRD, covering customers & contacts with timelines, lead scoring and conversion, an opportunities kanban pipeline with weighted forecasting, server-priced quotations with a manager approval workflow, SLA-driven support tickets, marketing campaigns with ROI tracking, role-specific reports, and admin tooling with a permission matrix and immutable audit logs.",
