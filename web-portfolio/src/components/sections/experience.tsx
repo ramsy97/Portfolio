@@ -1,168 +1,122 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Briefcase, GraduationCap } from "lucide-react";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-import { cn } from "@/lib/utils";
+import { Download } from "lucide-react";
+import { Reveal } from "@/components/ui/reveal";
 import { useLanguage } from "@/contexts/language-context";
 
-const typeIcons: Record<string, React.ReactNode> = {
-  work: <Briefcase className="w-4 h-4" />,
-  learning: <GraduationCap className="w-4 h-4" />,
-};
-
-const typeColors: Record<string, string> = {
-  work: "bg-green-500",
-  learning: "bg-purple-500",
-};
-
-type ExperienceItem = {
-  title: string;
-  company: string;
-  location: string;
-  period: string;
-  type: "work" | "learning";
-  description: string[];
-  summary?: string;
-  responsibilities?: string[];
-  learned?: string;
-};
-
-function InlineBold({ text }: { text: string }) {
-  const parts = text.split("**");
-  return (
-    <>
-      {parts.map((part, i) =>
-        i % 2 === 1 ? (
-          <strong key={i} className="font-semibold text-foreground">
-            {part}
-          </strong>
-        ) : (
-          <span key={i}>{part}</span>
-        )
-      )}
-    </>
-  );
-}
-
 export function Experience() {
-  const { ref, isVisible } = useScrollAnimation(0.05);
-  const { t, lang } = useLanguage();
-
-  const typeLabels: Record<string, { label: string; className: string }> = {
-    work: { label: t.experience.work, className: "bg-green-500/20 text-green-600 dark:text-green-400" },
-    learning: { label: t.experience.learning, className: "bg-purple-500/20 text-purple-600 dark:text-purple-400" },
-  };
+  const { t } = useLanguage();
+  const job = t.experience.jobs[0];
 
   return (
-    <section id="experience" className="py-24 md:py-32 bg-background">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6" ref={ref}>
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12 sm:mb-16"
-        >
-          <p className="text-primary font-semibold mb-3 uppercase tracking-wide text-sm">
-            {t.experience.sectionLabel}
-          </p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
-            {lang === "id" ? (
-              <>
-                {t.experience.title}{" "}
-                <span className="gradient-text">{t.experience.titleHighlight}</span>
-              </>
-            ) : (
-              <>
-                My <span className="gradient-text">{t.experience.titleHighlight}</span>
-              </>
-            )}
-          </h2>
-        </motion.div>
-
-        <div className="relative max-w-2xl mx-auto">
-          <div className="absolute left-[7px] md:left-[9px] top-2 bottom-2 w-px bg-border" />
-
-          <div className="space-y-6 md:space-y-8">
-            {(t.experience.data as unknown as ExperienceItem[]).map((exp, i) => {
-              const info = typeLabels[exp.type] || typeLabels.work;
-              const isRich = typeof exp.summary === "string";
-
-              return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.45, delay: i * 0.08 }}
-                  className="relative pl-10 md:pl-14"
+    <section id="experience" className="border-t border-line py-20 md:py-28">
+      <div className="mx-auto max-w-[1120px] px-6 md:px-10">
+        <div className="grid gap-x-10 gap-y-12 md:grid-cols-12">
+          <div className="md:col-span-4">
+            <div className="md:sticky md:top-24">
+              <Reveal>
+                <p className="eyebrow text-accent">{t.experience.label}</p>
+                <p className="mt-5 max-w-[30ch] text-sm leading-[1.75] text-muted-ink">
+                  {t.experience.intro}
+                </p>
+                <a
+                  href="/cv.pdf"
+                  download
+                  className="mt-6 inline-flex items-center gap-2 rounded-md border border-line px-4 py-2 text-[13px] font-medium transition-colors hover:border-accent hover:text-accent"
                 >
-                  <span
-                    className={cn(
-                      "absolute left-0 md:left-[2px] top-7 w-[15px] h-[15px] md:w-[19px] md:h-[19px] rounded-full border-[3px] border-background",
-                      typeColors[exp.type]
-                    )}
-                  />
+                  <Download className="h-3.5 w-3.5" />
+                  CV / Resume
+                </a>
+              </Reveal>
+            </div>
+          </div>
 
-                  <div className="rounded-2xl border border-border bg-card p-5 md:p-6 shadow-sm hover:shadow-md hover:border-primary/40 transition-all duration-300">
-                    <span
-                      className={cn(
-                        "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold",
-                        info.className
-                      )}
+          <div className="md:col-span-8">
+            <Reveal>
+              <article>
+                <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
+                  <h3 className="text-xl font-semibold tracking-tight">
+                    {job.company}
+                  </h3>
+                  <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-ink">
+                    {job.period}
+                  </p>
+                </div>
+                <p className="mt-1.5 text-[15px] text-muted-ink">{job.role}</p>
+                <p className="mt-0.5 font-mono text-[11px] text-muted-ink">
+                  {job.location}
+                </p>
+
+                <p className="mt-5 text-[15px] leading-[1.75]">{job.summary}</p>
+
+                <ul className="mt-5 space-y-2">
+                  {job.bullets.map((bullet) => (
+                    <li
+                      key={bullet}
+                      className="flex items-baseline gap-2.5 text-sm leading-relaxed text-muted-ink"
                     >
-                      {typeIcons[exp.type]}
-                      {info.label}
-                    </span>
+                      <span
+                        aria-hidden="true"
+                        className="inline-block h-[4px] w-[4px] shrink-0 translate-y-[-2px] bg-accent"
+                      />
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
 
-                    <h3 className="text-base sm:text-lg font-bold mt-3">{exp.company}</h3>
-                    <p className="text-sm font-semibold text-primary mt-0.5">{exp.title}</p>
-                    <p className="text-xs text-muted-foreground mt-1">
-                      {exp.period} · {exp.location}
-                    </p>
+                <blockquote className="mt-7 border-l-2 border-accent pl-5">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-ink">
+                    {t.experience.learnedLabel}
+                  </p>
+                  <p className="mt-2 text-[15px] leading-[1.75] text-muted-ink">
+                    {job.learned}
+                  </p>
+                </blockquote>
+              </article>
+            </Reveal>
 
-                    {isRich ? (
-                      <>
-                        <p className="text-sm text-muted-foreground leading-relaxed mt-3">
-                          <InlineBold text={exp.summary!} />
+            <Reveal delay={80}>
+              <div className="mt-14">
+                <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-ink">
+                  {t.experience.educationLabel}
+                </p>
+                <div className="mt-4 border-t border-line">
+                  {t.experience.education.map((item) => (
+                    <div
+                      key={item.school}
+                      className="border-b border-line py-5"
+                    >
+                      <div className="grid gap-x-6 gap-y-1 md:grid-cols-12 md:items-baseline">
+                        <div className="md:col-span-8">
+                          <p className="text-[15px] font-semibold">{item.school}</p>
+                          <p className="mt-0.5 text-sm text-muted-ink">{item.degree}</p>
+                        </div>
+                        <p className="text-sm text-muted-ink md:col-span-2">
+                          {item.location}
                         </p>
-                        <h4 className="text-sm font-bold mt-4 mb-2">
-                          {t.experience.responsibilitiesLabel}
-                        </h4>
-                        <ul className="space-y-1.5">
-                          {(exp.responsibilities ?? []).map((desc, j) => (
-                            <li
-                              key={j}
-                              className="text-sm text-muted-foreground leading-relaxed flex items-start gap-2"
-                            >
-                              <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0 mt-2" />
-                              <span><InlineBold text={desc} /></span>
-                            </li>
-                          ))}
-                        </ul>
-                        <h4 className="text-sm font-bold mt-4 mb-2">
-                          {t.experience.learnedLabel}
-                        </h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                          <InlineBold text={exp.learned!} />
+                        <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-ink md:col-span-2 md:text-right">
+                          {item.period}
                         </p>
-                      </>
-                    ) : (
-                      <ul className="mt-3 space-y-1.5">
-                        {exp.description.map((desc, j) => (
+                      </div>
+                      <ul className="mt-4 space-y-2">
+                        {item.details.map((detail) => (
                           <li
-                            key={j}
-                            className="text-sm text-muted-foreground leading-relaxed flex items-start gap-2"
+                            key={detail}
+                            className="flex items-baseline gap-2.5 text-sm leading-relaxed text-muted-ink"
                           >
-                            <span className="w-1.5 h-1.5 rounded-full bg-primary/50 shrink-0 mt-2" />
-                            <span>{desc}</span>
+                            <span
+                              aria-hidden="true"
+                              className="inline-block h-[4px] w-[4px] shrink-0 translate-y-[-2px] bg-accent"
+                            />
+                            {detail}
                           </li>
                         ))}
                       </ul>
-                    )}
-                  </div>
-                </motion.div>
-              );
-            })}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
           </div>
         </div>
       </div>

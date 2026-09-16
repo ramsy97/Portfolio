@@ -1,43 +1,30 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { ArrowLeft, Home } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center px-6">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="text-center max-w-md"
-      >
-        <motion.p
-          initial={{ scale: 0.8 }}
-          animate={{ scale: 1 }}
-          transition={{ type: "spring", stiffness: 200 }}
-          className="text-8xl font-bold gradient-text mb-4"
-        >
-          404
-        </motion.p>
-        <h1 className="text-2xl font-bold mb-2">Page Not Found</h1>
-        <p className="text-muted-foreground mb-8">
-          The page you&apos;re looking for doesn&apos;t exist or has been moved.
-        </p>
-        <div className="flex justify-center gap-4">
-          <Link href="/">
-            <Button>
-              <Home className="w-4 h-4" />
-              Go Home
-            </Button>
-          </Link>
-          <Button variant="outline" onClick={() => window.history.back()}>
-            <ArrowLeft className="w-4 h-4" />
-            Go Back
-          </Button>
+    <div className="flex min-h-screen items-center px-6">
+      <div className="mx-auto w-full max-w-[1120px]">
+        <div className="grid gap-8 py-20 md:grid-cols-12">
+          <div className="md:col-span-4">
+            <p className="eyebrow text-accent">404</p>
+            <h1 className="mt-5 text-2xl font-semibold tracking-tight">
+              Page not found
+            </h1>
+          </div>
+          <div className="md:col-span-8">
+            <p className="max-w-[52ch] text-[15px] leading-[1.75] text-muted-ink">
+              The page you&apos;re looking for doesn&apos;t exist or has been
+              moved. Head back to the homepage.
+            </p>
+            <Link
+              href="/"
+              className="mt-6 inline-flex items-center gap-2 rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-canvas transition-colors hover:bg-accent-strong"
+            >
+              Back to homepage
+            </Link>
+          </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }

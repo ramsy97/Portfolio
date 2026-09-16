@@ -1,37 +1,24 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, Copy, Check, Loader2 } from "lucide-react";
-import { LinkedinIcon, GithubIcon, InstagramIcon } from "@/components/ui/brand-icons";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { ArrowUpRight, Check, Loader2 } from "lucide-react";
+import { Reveal } from "@/components/ui/reveal";
+import { GithubIcon, LinkedinIcon, WhatsAppIcon } from "@/components/ui/brand-icons";
 import { siteConfig } from "@/data/portfolio";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useLanguage } from "@/contexts/language-context";
 
 export function Contact() {
-  const { ref, isVisible } = useScrollAnimation(0.1);
   const { t } = useLanguage();
-  const [copied, setCopied] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [sending, setSending] = useState(false);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
-  const contactLinks = [
-    { icon: Mail, label: "Email", value: siteConfig.email, href: `mailto:${siteConfig.email}` },
-    { icon: LinkedinIcon, label: "LinkedIn", value: "linkedin.com/in/ramy-syafitri", href: siteConfig.linkedin },
-    { icon: GithubIcon, label: "GitHub", value: "github.com/ramsy97", href: siteConfig.github },
-    { icon: InstagramIcon, label: "Instagram", value: "@ramysyafitri", href: siteConfig.instagram },
-    { icon: Phone, label: "WhatsApp", value: siteConfig.phone, href: siteConfig.whatsapp },
-    { icon: MapPin, label: "Location", value: siteConfig.location, href: undefined },
+  const channels = [
+    { label: "Email", value: siteConfig.email, href: `mailto:${siteConfig.email}` },
+    { label: "LinkedIn", value: "linkedin.com/in/ramy-syafitri", href: siteConfig.linkedin },
+    { label: "GitHub", value: "github.com/ramsy97", href: siteConfig.github },
+    { label: "WhatsApp", value: "+62 851-5641-4903", href: siteConfig.whatsapp },
   ];
-
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText(siteConfig.email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -54,130 +41,143 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 md:py-32 bg-background">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6" ref={ref}>
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12 sm:mb-16"
-        >
-          <p className="text-primary font-semibold mb-3 uppercase tracking-wide text-sm">
-            {t.contact.sectionLabel}
-          </p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
-            {t.contact.title}{" "}
-            <span className="gradient-text">{t.contact.titleHighlight}</span>
-          </h2>
-          <p className="text-muted-foreground mt-4 max-w-md mx-auto text-sm sm:text-base">
-            {t.contact.subtitle}
-          </p>
-        </motion.div>
+    <section id="contact" className="border-t border-line py-20 md:py-28">
+      <div className="mx-auto max-w-[1120px] px-6 md:px-10">
+        <div className="grid gap-x-10 gap-y-12 md:grid-cols-12">
+          <div className="md:col-span-5">
+            <Reveal>
+              <p className="eyebrow text-accent">{t.contact.label}</p>
+              <h2 className="mt-5 text-[1.7rem] font-semibold leading-[1.15] tracking-[-0.025em] md:text-[2rem]">
+                {t.contact.heading}
+              </h2>
+              <p className="mt-4 max-w-[40ch] text-[15px] leading-[1.75] text-muted-ink">
+                {t.contact.intro}
+              </p>
 
-        <div className="grid lg:grid-cols-[1fr_1.3fr] gap-6 sm:gap-8 max-w-5xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="space-y-2.5 sm:space-y-3"
-          >
-            {contactLinks.map((link) => {
-              const Icon = link.icon;
-              return (
-                <Card key={link.label} hover className="flex items-center gap-3 sm:gap-4 border-border !p-3 sm:!p-4">
-                  <div className="p-2 sm:p-2.5 rounded-xl bg-primary/15 text-primary shrink-0">
-                    <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-xs text-muted-foreground font-medium">{link.label}</p>
-                    <p className="text-xs sm:text-sm font-semibold truncate">{link.value}</p>
-                  </div>
-                  {link.label === "Email" ? (
-                    <button
-                      onClick={handleCopyEmail}
-                      className="p-2 rounded-lg hover:bg-muted transition-colors"
-                      title="Copy email"
-                    >
-                      {copied ? (
-                        <Check className="w-4 h-4 text-green-500" />
-                      ) : (
-                        <Copy className="w-4 h-4 text-muted-foreground" />
-                      )}
-                    </button>
-                  ) : link.href ? (
+              <div className="mt-9">
+                <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-ink">
+                  {t.contact.channelsLabel}
+                </p>
+                <div className="mt-4 border-t border-line">
+                  {channels.map((channel) => (
                     <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 rounded-lg hover:bg-muted transition-colors text-muted-foreground hover:text-primary"
+                      key={channel.label}
+                      href={channel.href}
+                      target={channel.href.startsWith("http") ? "_blank" : undefined}
+                      rel={channel.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      className="group grid items-baseline gap-x-4 gap-y-0.5 border-b border-line py-4 md:grid-cols-12"
                     >
-                      <Send className="w-4 h-4" />
+                      <span className="text-sm font-semibold md:col-span-3">
+                        {channel.label}
+                      </span>
+                      <span className="truncate font-mono text-[12px] text-muted-ink md:col-span-8">
+                        {channel.value}
+                      </span>
+                      <span className="hidden text-accent md:col-span-1 md:flex md:justify-end">
+                        <ArrowUpRight className="h-3.5 w-3.5 opacity-0 transition-opacity group-hover:opacity-100" />
+                      </span>
                     </a>
-                  ) : null}
-                </Card>
-              );
-            })}
-          </motion.div>
+                  ))}
+                </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 24 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <Card className="p-4 sm:p-6 md:p-8 border-border">
-              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
-                <div>
-                  <label className="text-sm font-semibold mb-2 block">{t.contact.nameLabel}</label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-muted border border-border text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 transition-all placeholder:text-muted-foreground/50"
-                    placeholder={t.contact.namePlaceholder}
-                  />
+                <div className="mt-6 flex items-center gap-1.5 text-muted-ink">
+                  <GithubIcon size={14} />
+                  <LinkedinIcon size={14} />
+                  <WhatsAppIcon size={14} />
+                  <span className="ml-2 font-mono text-[11px] uppercase tracking-[0.14em]">
+                    {siteConfig.location}
+                  </span>
                 </div>
-                <div>
-                  <label className="text-sm font-semibold mb-2 block">{t.contact.emailLabel}</label>
-                  <input
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-muted border border-border text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 transition-all placeholder:text-muted-foreground/50"
-                    placeholder={t.contact.emailPlaceholder}
-                  />
+              </div>
+            </Reveal>
+          </div>
+
+          <div className="md:col-span-7">
+            <Reveal delay={80}>
+              <form
+                onSubmit={handleSubmit}
+                className="border border-line p-7 md:p-10"
+              >
+                <div className="grid gap-8 md:grid-cols-2">
+                  <div>
+                    <label
+                      htmlFor="contact-name"
+                      className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-ink"
+                    >
+                      {t.contact.nameLabel}
+                    </label>
+                    <input
+                      id="contact-name"
+                      type="text"
+                      required
+                      autoComplete="name"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      placeholder={t.contact.namePlaceholder}
+                      className="mt-2 w-full border-b border-line bg-transparent pb-2 text-[15px] transition-colors placeholder:text-muted-ink/60 focus:border-accent focus:outline-none"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="contact-email"
+                      className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-ink"
+                    >
+                      {t.contact.emailLabel}
+                    </label>
+                    <input
+                      id="contact-email"
+                      type="email"
+                      required
+                      autoComplete="email"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      placeholder={t.contact.emailPlaceholder}
+                      className="mt-2 w-full border-b border-line bg-transparent pb-2 text-[15px] transition-colors placeholder:text-muted-ink/60 focus:border-accent focus:outline-none"
+                    />
+                  </div>
                 </div>
-                <div>
-                  <label className="text-sm font-semibold mb-2 block">{t.contact.messageLabel}</label>
+
+                <div className="mt-8">
+                  <label
+                    htmlFor="contact-message"
+                    className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-ink"
+                  >
+                    {t.contact.messageLabel}
+                  </label>
                   <textarea
+                    id="contact-message"
                     required
                     rows={4}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-muted border border-border text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 transition-all resize-none placeholder:text-muted-foreground/50"
                     placeholder={t.contact.messagePlaceholder}
+                    className="mt-2 w-full resize-none border-b border-line bg-transparent pb-2 text-[15px] transition-colors placeholder:text-muted-ink/60 focus:border-accent focus:outline-none"
                   />
                 </div>
-                <Button type="submit" size="lg" className="w-full shadow-lg shadow-primary/20" disabled={sending}>
-                  {sending ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
-                  {sending ? t.contact.sending : t.contact.sendMessage}
-                </Button>
-                {status === "success" && (
-                  <p className="flex items-center gap-2 text-sm font-medium text-green-600 dark:text-green-400">
-                    <Check className="w-4 h-4" />
-                    {t.contact.sendSuccess}
-                  </p>
-                )}
-                {status === "error" && (
-                  <p className="flex items-center gap-2 text-sm font-medium text-red-600 dark:text-red-400">
-                    <Send className="w-4 h-4" />
-                    {t.contact.sendError}
-                  </p>
-                )}
+
+                <div className="mt-9 flex flex-wrap items-center gap-5">
+                  <button
+                    type="submit"
+                    disabled={sending}
+                    className="inline-flex items-center gap-2 rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-canvas transition-colors hover:bg-accent-strong disabled:cursor-not-allowed disabled:opacity-60"
+                  >
+                    {sending ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
+                    {sending ? t.contact.sending : t.contact.sendMessage}
+                  </button>
+
+                  {status === "success" && (
+                    <p className="flex items-center gap-1.5 text-sm text-accent">
+                      <Check className="h-4 w-4" />
+                      {t.contact.sendSuccess}
+                    </p>
+                  )}
+                  {status === "error" && (
+                    <p className="text-sm text-muted-ink">{t.contact.sendError}</p>
+                  )}
+                </div>
               </form>
-            </Card>
-          </motion.div>
+            </Reveal>
+          </div>
         </div>
       </div>
     </section>

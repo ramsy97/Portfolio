@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Ramy Syafitri",
   title: "Ramy Syafitri — Software Engineer",
-  description: "Full-Stack Developer specializing in modern web applications, ERP systems, and digital solutions. Building fast, efficient, and user-friendly applications.",
+  description: "Software engineer building web applications and internal systems for business workflows — inventory, manufacturing, CRM, and management tools. Based in Bekasi, Indonesia.",
   url: "https://ramysyafitri.vercel.app",
   email: "ramysyafitri8@gmail.com",
   phone: "+6285156414903",
@@ -25,12 +25,26 @@ export type NavItem = {
 };
 
 export const navItems: NavItem[] = [
-  { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
+  { label: "Selected Work", href: "#work" },
   { label: "Experience", href: "#experience" },
+  { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
+];
+
+export const featuredProjectIds = [
+  "andon-monitoring",
+  "nexus-crm",
+  "erp-inventory",
+  "absen-digital",
+  "service-desk",
+];
+
+export const moreProjectIds = [
+  "cafepos",
+  "ai-manufacturing",
+  "warehouse-management",
+  "system-finance",
 ];
 
 export type SkillCategory = {

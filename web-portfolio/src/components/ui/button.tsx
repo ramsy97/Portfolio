@@ -4,8 +4,8 @@ import { cn } from "@/lib/utils";
 import { type ButtonHTMLAttributes, forwardRef } from "react";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "outline" | "ghost";
-  size?: "sm" | "md" | "lg";
+  variant?: "primary" | "outline" | "ghost";
+  size?: "sm" | "md";
 }
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -14,20 +14,17 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         className={cn(
-          "inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all duration-200",
-          "focus:outline-none focus:ring-2 focus:ring-primary/40 focus:ring-offset-2 focus:ring-offset-background",
+          "inline-flex items-center justify-center gap-2 rounded-md font-medium transition-colors duration-200",
+          "focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent",
           "disabled:opacity-50 disabled:cursor-not-allowed",
           variant === "primary" &&
-            "bg-primary text-white hover:bg-primary/90 shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 active:translate-y-0",
-          variant === "secondary" &&
-            "bg-muted text-foreground hover:bg-muted/80 border border-border",
+            "bg-accent text-canvas hover:bg-accent-strong",
           variant === "outline" &&
-            "border border-border text-foreground hover:bg-muted hover:border-primary/30",
+            "border border-line text-ink hover:border-accent hover:text-accent",
           variant === "ghost" &&
-            "text-muted-foreground hover:text-foreground hover:bg-muted",
-          size === "sm" && "px-4 py-2 text-sm",
+            "text-muted-ink hover:text-accent",
+          size === "sm" && "px-4 py-2 text-[13px]",
           size === "md" && "px-5 py-2.5 text-sm",
-          size === "lg" && "px-7 py-3.5 text-sm",
           className
         )}
         {...props}
