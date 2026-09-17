@@ -33,18 +33,18 @@ export const navItems: NavItem[] = [
 ];
 
 export const featuredProjectIds = [
-  "andon-monitoring",
-  "nexus-crm",
   "erp-inventory",
   "absen-digital",
-  "service-desk",
+  "warehouse-management",
+  "cafepos",
+  "system-finance",
 ];
 
 export const moreProjectIds = [
-  "cafepos",
+  "andon-monitoring",
+  "nexus-crm",
   "ai-manufacturing",
-  "warehouse-management",
-  "system-finance",
+  "service-desk",
 ];
 
 export type SkillCategory = {

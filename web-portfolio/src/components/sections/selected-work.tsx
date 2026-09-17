@@ -69,7 +69,8 @@ export function SelectedWork() {
 
   const featured = featuredProjectIds
     .map((id) => buildProject(id, localized))
-    .filter((p): p is NonNullable<typeof p> => p !== null);
+    .filter((p): p is NonNullable<typeof p> => p !== null)
+    .filter((p) => p.liveUrl);
 
   const more = moreProjectIds
     .map((id) => {
