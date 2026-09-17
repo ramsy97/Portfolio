@@ -62,12 +62,6 @@ export function Hero() {
                 </a>
               </div>
             </Reveal>
-
-            <Reveal delay={320}>
-              <p className="mt-9 font-mono text-[11px] uppercase tracking-[0.16em] text-muted-ink">
-                {t.hero.location} · {t.hero.status}
-              </p>
-            </Reveal>
           </div>
 
           <Reveal delay={200} className="lg:col-span-5">
