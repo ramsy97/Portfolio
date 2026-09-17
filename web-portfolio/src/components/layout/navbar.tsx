@@ -137,7 +137,7 @@ export function Navbar() {
         {mobileOpen && (
           <div className="border-t border-line bg-canvas md:hidden">
             <div className="mx-auto flex max-w-[1120px] flex-col gap-1 px-6 py-4">
-              {navItems.map((item, i) => (
+              {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => handleNavClick(item.href)}
@@ -147,9 +147,6 @@ export function Navbar() {
                   )}
                 >
                   {item.label}
-                  <span className="font-mono text-[11px] text-muted-ink">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
                 </button>
               ))}
               <a

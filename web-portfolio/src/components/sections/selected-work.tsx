@@ -107,10 +107,7 @@ export function SelectedWork() {
                       : "lg:order-2 lg:col-span-5"
                   }
                 >
-                  <span className="eyebrow text-muted-ink">
-                    {`${String(i + 1).padStart(2, "0")}`}
-                  </span>
-                  <h3 className="mt-4 text-2xl font-semibold leading-snug tracking-[-0.02em] md:text-[1.75rem]">
+                  <h3 className="text-2xl font-semibold leading-snug tracking-[-0.02em] md:text-[1.75rem]">
                     {project.title}
                   </h3>
 

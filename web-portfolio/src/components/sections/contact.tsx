@@ -3,7 +3,6 @@
 import { useState, type FormEvent } from "react";
 import { ArrowUpRight, Check, Loader2 } from "lucide-react";
 import { Reveal } from "@/components/ui/reveal";
-import { GithubIcon, LinkedinIcon, WhatsAppIcon } from "@/components/ui/brand-icons";
 import { siteConfig } from "@/data/portfolio";
 import { useLanguage } from "@/contexts/language-context";
 
@@ -78,15 +77,6 @@ export function Contact() {
                       </span>
                     </a>
                   ))}
-                </div>
-
-                <div className="mt-6 flex items-center gap-1.5 text-muted-ink">
-                  <GithubIcon size={14} />
-                  <LinkedinIcon size={14} />
-                  <WhatsAppIcon size={14} />
-                  <span className="ml-2 font-mono text-[11px] uppercase tracking-[0.14em]">
-                    {siteConfig.location}
-                  </span>
                 </div>
               </div>
             </Reveal>
