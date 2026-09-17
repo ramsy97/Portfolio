@@ -41,6 +41,7 @@ export const en = {
       "A selection of business applications built end-to-end. Each one started with an operational problem, not a template.",
     role: "Role",
     stack: "Stack",
+    problem: "Problem solved",
     whatItDoes: "What it does",
     features: "Key features",
     viewProject: "View project",

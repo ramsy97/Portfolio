@@ -41,6 +41,7 @@ export const id = {
       "Seleksi aplikasi bisnis yang saya bangun end-to-end. Masing-masing berangkat dari masalah operasional, bukan dari template.",
     role: "Peran",
     stack: "Stack",
+    problem: "Masalah yang diselesaikan",
     whatItDoes: "Fungsinya",
     features: "Fitur utama",
     viewProject: "Lihat proyek",

@@ -25,6 +25,7 @@ function buildProject(id: string, localized: Record<string, unknown>[]) {
   return {
     ...base,
     description: data.description,
+    problem: data.problem,
     role: data.role.split(" — ")[0].split(" – ")[0],
     features: data.features.slice(0, 5),
   };
@@ -115,6 +116,15 @@ export function SelectedWork() {
                   <p className="mt-4 text-sm leading-[1.75] text-muted-ink">
                     {project.description}
                   </p>
+
+                  <div className="mt-5 border border-line bg-surface p-4">
+                    <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-accent">
+                      {t.work.problem}
+                    </p>
+                    <p className="mt-1.5 text-[13px] leading-relaxed text-muted-ink">
+                      {project.problem}
+                    </p>
+                  </div>
 
                   <dl className="mt-6">
                     <div className="border-t border-line py-3">
